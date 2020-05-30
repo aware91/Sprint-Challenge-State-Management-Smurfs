@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from 'axios';
 import SmurfsData from './SmurfsData';
+import SmurfsForm from './SmurfsForm';
 
 function App()  {
   const [smurf, setSmurf] = useState([]);
@@ -25,6 +26,7 @@ function App()  {
       <div>Start inside of your `src/index.js` file!</div>
       <div>Have fun!</div>
       <SmurfsData smurf={smurf} />
+      <SmurfsForm />
     </div>
   );
 }
