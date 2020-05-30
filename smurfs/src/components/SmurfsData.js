@@ -5,13 +5,15 @@ const SmurfsData = props => {
     return (
         <div>
             <h1>Smurfs</h1>
-            {props.smurf.map((smurfs)=>(
-                <div key={smurfs.id} className='smurfsCard'>
-                    <p>Name: {smurfs.name}</p>
-                    <p>Age: {smurfs.age}</p>
-                    <p>Height: {smurfs.height}</p>
-                </div>
-            ))}
+            <div className='smurfCard'>
+                {props.smurf.map((smurfs)=>(
+                    <div key={smurfs.id} className='smurfsCard'>
+                        <p>Name: {smurfs.name}</p>
+                        <p>Age: {smurfs.age}</p>
+                        <p>Height: {smurfs.height}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

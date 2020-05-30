@@ -7,13 +7,13 @@ export default class SmurfsForm extends React.Component {
         name: '',
         age: '',
         height: '',
-        id: ''
     }
 
     handleChanges = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
+        console.log('aw: SmurfsForm: handleChanges: state', this.state)
     }
 
     handleSubmit = (e) => {
@@ -22,22 +22,26 @@ export default class SmurfsForm extends React.Component {
             name: this.state.name,
             age: this.state.age,
             height: this.state.height,
-            id: Date.now()
         }
+
+        console.log('aw: SmurfsForm.js: handleSubmit: smurf: ',smurf)
         axios
-            .post('http://localhost:3333/smurfs', {smurf})
+            .post('http://localhost:3333/smurfs', smurf)
             .then(res => {
                 console.log('aw: SmurfsForm.js: Post: ', res)
                 console.log('aw: SmurfsForm.js: Post: ', res.data)
+            })
+            .catch(err => {
+                console.log('aw: SmurfsForm.js: err: ',err.response)
             })
     }
 
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className='smurfsForm'>
                 <h2>Add Smurfs</h2>
-                <label>
-                    Name
+                <label className='infoEnter'>
+                    Name:
                     <input 
                         type='text'
                         name='name'
@@ -45,8 +49,8 @@ export default class SmurfsForm extends React.Component {
                         onChange={this.handleChanges}
                     />
                 </label>
-                <label>
-                    Age
+                <label className='infoEnter'>
+                    Age: 
                     <input 
                         type='text'
                         name='age'
@@ -54,8 +58,8 @@ export default class SmurfsForm extends React.Component {
                         onChange={this.handleChanges}
                     />
                 </label>
-                <label>
-                    Height
+                <label className='infoEnter'>
+                    Height:
                     <input 
                         type='text'
                         name='height'

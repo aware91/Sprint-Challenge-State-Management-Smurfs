@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.smurfCard {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin: 2% auto;
+}
+
 .smurfsCard {
   display: flex;
   flex-flow: column wrap;
@@ -9,4 +18,18 @@
   align-items: center;
   width: 25%;
   margin: auto;
+}
+
+.smurfsForm {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: auto;
+}
+
+.infoEnter {
+  width: 100%;
+  margin: 1% auto;
 }
