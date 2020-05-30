@@ -4,9 +4,14 @@ const SmurfsData = props => {
     console.log('aw: SmurfsData.js: props.smurf: ', props.smurf)
     return (
         <div>
-            <p>{props.smurf.name}</p>
-            <p>{props.smurf.age}</p>
-            <p>{props.smurf.height}</p>
+            {props.smurf.map((smurfs)=>(
+                <div key={smurfs.id}>
+                    <h1>Smurfs</h1>
+                    <p>Name: {smurfs.name}</p>
+                    <p>Age: {smurfs.age}</p>
+                    <p>Height: {smurfs.height}</p>
+                </div>
+            ))}
         </div>
     )
 }
